@@ -18,18 +18,16 @@ if [[ -z "$DEVICE_NAME" ]]; then
     DEVICE_NAME="eth1"
 fi
 ETH_GUID=$(basename "$(readlink /sys/class/net/"$DEVICE_NAME"/device)")
-#ETH2_GUID=$(basename `readlink /sys/class/net/eth2/device`)
+
 if [[ -n $(lspci -d 1414:00ba:0200) ]]; then
     # mana is available
-    MANA_MAC="$(cat /sys/class/net/"$DEVICE_NAME"/address)"
-    echo "--vdev=\"7870:00:00.0,mac=$MANA_MAC\"" > ~/vdev_args
-else
-    DEVICE_SLOT=$(basename "$(readlink /sys/class/net/eth0/lower_*/device)")
-    if [[ -z "$DEVICE_SLOT" ]]; then
-        echo "Could not find eth0 pci address"
+    sudo modprobe mana_ib || { \
+        echo "Could not load mana_ib, try installing linux-modules-extra-azure" 1>&2 
         exit 1;
-    fi
-    echo "-b $DEVICE_SLOT" > ~/vdev_args
+    }
+else
+    echo "Script requires a MANA VM" 1>&2
+    exit 1;
 fi
 
 ## should check if this has already been set up, just ignore failure for now

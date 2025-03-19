@@ -1,0 +1,11 @@
+### Notes:
+
+- Copy the contents of this directory to two Standard_E192ids_v6 VMs which share a subnet on their second Azure NIC. Something like `scp -r scripts/ $USER@$IP_ADDRESS:` should work.
+
+- Start the receiver script on one VM
+
+- Start the sender script on the other VM, providing the sender and receiver IPs to testpmd with the -s and -r options. These arguments should be the private IP addresses of the second nic on the VMs (typically named 'eth1').
+
+Note that if you use eth0 as the testpmd NIC, you may lose your SSH connection to the VM.
+
+
