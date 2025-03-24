@@ -35,4 +35,4 @@ MANA_MAC="$(cat /sys/class/net/"$DEVICE_NAME"/address)"
 
 sudo ufw disable
 
-sudo dpdk-testpmd -l 3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47 --vdev="7870:00:00.0,mac=$MANA_MAC" -- --forward-mode=rxonly --auto-start   --txd=2048 --rxd=2048 --txq=8 --rxq=8 --stats 2   --txonly-multi-flow --nb-cores=16 --port-numa-config="(1,0)"
+sudo dpdk-testpmd -l 3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47 --vdev="7870:00:00.0,mac=$MANA_MAC" -- --forward-mode=rxonly --auto-start   --txd=2048 --rxd=2048 --txq=8 --rxq=8 --stats 2   --txonly-multi-flow --nb-cores=16
