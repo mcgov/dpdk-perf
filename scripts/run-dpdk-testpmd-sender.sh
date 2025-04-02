@@ -39,7 +39,7 @@ while true; do
     esac
 done
 
-if [[ -z "$SENDER" ]] || [[ -z "$RECEIVER_IP" ]]; then
+if [[ -z "$SENDER_IP" ]] || [[ -z "$RECEIVER_IP" ]]; then
     echo "Must provide a sender and receiver ip with -s and -r" 1>&2;
     exit 1
 fi
