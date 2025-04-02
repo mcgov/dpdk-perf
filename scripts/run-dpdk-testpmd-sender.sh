@@ -51,4 +51,4 @@ MANA_MAC="$(cat /sys/class/net/"$DEVICE_NAME"/address)"
 
 sudo ufw disable
 
-sudo dpdk-testpmd -l 3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47 --vdev="7870:00:00.0,mac=$MANA_MAC" -- --forward-mode=txonly --auto-start   --txd=2048 --txq=4 --rxq=4 --stats 2 --tx-ip="$SENDER_IP,$RECEIVER_IP"  --txonly-multi-flow --nb-cores=8
+sudo dpdk-testpmd -l 3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47 --vdev="7870:00:00.0,mac=$MANA_MAC" -- --forward-mode=txonly --auto-start  --rxd=2048 --txd=2048 --txq=4 --rxq=4 --stats 2 --tx-ip="$SENDER_IP,$RECEIVER_IP"  --txonly-multi-flow --nb-cores=8
