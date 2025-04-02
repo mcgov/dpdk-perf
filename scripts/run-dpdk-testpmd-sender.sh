@@ -46,8 +46,8 @@ fi
 
 MANA_MAC="$(cat /sys/class/net/"$DEVICE_NAME"/address)"
 
-./setup/enable_2mb_hugepages.sh
-./scripts/setup/setup-netvsc-pmd.sh "$DEVICE_NAME"
+"$SCRIPT_DIR/setup/enable_2mb_hugepages.sh"
+"$SCRIPT_DIR/setup/setup-netvsc-pmd.sh" "$DEVICE_NAME"
 
 sudo ufw disable
 
