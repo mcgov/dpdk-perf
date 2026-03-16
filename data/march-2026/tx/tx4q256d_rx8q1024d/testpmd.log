@@ -1,0 +1,194 @@
+# Command: sudo dpdk-testpmd -l 0,1,2,3,4 --vdev=7870:00:00.0,mac=7c:ed:8d:7f:15:f6 -- --forward-mode=txonly --txq=4 --rxq=4 --txd=256 --rxd=256 --stats-period=5 --nb-cores=4 --tx-ip=192.168.0.4,192.168.0.5 --txonly-multi-flow
+# Date: 2026-03-11T20:26:45Z
+# Role: sender  Queues: 4  Depth: 256
+---
+EAL: Detected CPU lcores: 128
+EAL: Detected NUMA nodes: 4
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+EAL: No free 2048 kB hugepages reported on node 1
+EAL: No free 2048 kB hugepages reported on node 2
+EAL: No free 2048 kB hugepages reported on node 3
+MANA_DRIVER: mana_init_once(): MP INIT PRIMARY
+HN_DRIVER: hn_vf_attach(): found matching VF port 0
+testpmd: create a new mbuf pool <mb_pool_0>: n=179456, size=2176, socket=0
+testpmd: preferred mempool ops selected: ring_mp_mc
+
+Warning! port-topology=paired and odd forward ports number, the last port will pair with itself.
+
+MANA_DRIVER: mana_mr_btree_init(): B-tree initialized table 0x100aba540 size 64 len 1
+MANA_DRIVER: mana_mr_btree_init(): B-tree initialized table 0x100aa2e40 size 64 len 1
+MANA_DRIVER: mana_mr_btree_init(): B-tree initialized table 0x100a8b240 size 64 len 1
+MANA_DRIVER: mana_mr_btree_init(): B-tree initialized table 0x100a73640 size 64 len 1
+MANA_DRIVER: mana_mr_btree_init(): B-tree initialized table 0x100a70880 size 64 len 1
+MANA_DRIVER: mana_mr_btree_init(): B-tree initialized table 0x1010e3cc0 size 64 len 1
+MANA_DRIVER: mana_mr_btree_init(): B-tree initialized table 0x11aae3ec0 size 64 len 1
+MANA_DRIVER: mana_mr_btree_init(): B-tree initialized table 0x11ace3ec0 size 64 len 1
+MANA_DRIVER: mana_mr_btree_init(): B-tree initialized table 0x11acdfe40 size 512 len 1
+Set txonly packet forwarding mode
+Configuring Port 1 (socket 0)
+Port 1: 7C:ED:8D:7F:15:F6
+Checking link statuses...
+Error during enabling promiscuous mode for port 1: Operation not supported - ignore
+Done
+No commandline core given, start packet forwarding
+txonly packet forwarding - ports=1 - cores=4 - streams=4 - NUMA support enabled, MP allocation mode: native
+Logical Core 1 (socket 0) forwards packets on 1 streams:
+  RX P=1/Q=0 (socket 0) -> TX P=1/Q=0 (socket 0) peer=02:00:00:00:00:01
+Logical Core 2 (socket 0) forwards packets on 1 streams:
+  RX P=1/Q=1 (socket 0) -> TX P=1/Q=1 (socket 0) peer=02:00:00:00:00:01
+Logical Core 3 (socket 0) forwards packets on 1 streams:
+  RX P=1/Q=2 (socket 0) -> TX P=1/Q=2 (socket 0) peer=02:00:00:00:00:01
+Logical Core 4 (socket 0) forwards packets on 1 streams:
+  RX P=1/Q=3 (socket 0) -> TX P=1/Q=3 (socket 0) peer=02:00:00:00:00:01
+
+  txonly packet forwarding packets/burst=32
+  packet len=64 - nb packet segments=1
+  nb forwarding cores=4 - nb forwarding ports=1
+  port 1: RX queue number: 4 Tx queue number: 4
+    Rx offloads=0x80000 Tx offloads=0x0
+    RX queue: 0
+      RX desc=256 - RX free threshold=0
+      RX threshold registers: pthresh=0 hthresh=0  wthresh=0
+      RX Offloads=0x80000
+    TX queue: 0
+      TX desc=256 - TX free threshold=0
+      TX threshold registers: pthresh=0 hthresh=0  wthresh=0
+      TX offloads=0x0 - TX RS bit threshold=0
+[2J[1;1H
+Port statistics ====================================
+  ######################## NIC statistics for port 1  ########################
+  RX-packets: 0          RX-missed: 0          RX-bytes:  0
+  RX-errors: 0
+  RX-nombuf:  0         
+  TX-packets: 1824       TX-errors: 0          TX-bytes:  116736
+
+  Throughput (since last show)
+  Rx-pps:            0          Rx-bps:            0
+  Tx-pps:            0          Tx-bps:            0
+  ############################################################################
+[2J[1;1H
+Port statistics ====================================
+  ######################## NIC statistics for port 1  ########################
+  RX-packets: 0          RX-missed: 0          RX-bytes:  0
+  RX-errors: 0
+  RX-nombuf:  0         
+  TX-packets: 235320311  TX-errors: 0          TX-bytes:  15060499840
+
+  Throughput (since last show)
+  Rx-pps:            0          Rx-bps:            0
+  Tx-pps:     47058233          Tx-bps:  24093815360
+  ############################################################################
+[2J[1;1H
+Port statistics ====================================
+  ######################## NIC statistics for port 1  ########################
+  RX-packets: 0          RX-missed: 0          RX-bytes:  0
+  RX-errors: 0
+  RX-nombuf:  0         
+  TX-packets: 470736736  TX-errors: 0          TX-bytes:  30127151104
+
+  Throughput (since last show)
+  Rx-pps:            0          Rx-bps:            0
+  Tx-pps:     47078072          Tx-bps:  24103973000
+  ############################################################################
+[2J[1;1H
+Port statistics ====================================
+  ######################## NIC statistics for port 1  ########################
+  RX-packets: 0          RX-missed: 0          RX-bytes:  0
+  RX-errors: 0
+  RX-nombuf:  0         
+  TX-packets: 706143680  TX-errors: 0          TX-bytes:  45193195520
+
+  Throughput (since last show)
+  Rx-pps:            0          Rx-bps:            0
+  Tx-pps:     47076368          Tx-bps:  24103100448
+  ############################################################################
+[2J[1;1H
+Port statistics ====================================
+  ######################## NIC statistics for port 1  ########################
+  RX-packets: 0          RX-missed: 0          RX-bytes:  0
+  RX-errors: 0
+  RX-nombuf:  0         
+  TX-packets: 941603008  TX-errors: 0          TX-bytes:  60262592512
+
+  Throughput (since last show)
+  Rx-pps:            0          Rx-bps:            0
+  Tx-pps:     47087788          Tx-bps:  24108947672
+  ############################################################################
+[2J[1;1H
+Port statistics ====================================
+  ######################## NIC statistics for port 1  ########################
+  RX-packets: 0          RX-missed: 0          RX-bytes:  0
+  RX-errors: 0
+  RX-nombuf:  0         
+  TX-packets: 1177116064 TX-errors: 0          TX-bytes:  75335428096
+
+  Throughput (since last show)
+  Rx-pps:            0          Rx-bps:            0
+  Tx-pps:     47098046          Tx-bps:  24114199936
+  ############################################################################
+[2J[1;1H
+Port statistics ====================================
+  ######################## NIC statistics for port 1  ########################
+  RX-packets: 0          RX-missed: 0          RX-bytes:  0
+  RX-errors: 0
+  RX-nombuf:  0         
+  TX-packets: 1412617056 TX-errors: 0          TX-bytes:  90407491584
+
+  Throughput (since last show)
+  Rx-pps:            0          Rx-bps:            0
+  Tx-pps:     47095285          Tx-bps:  24112786312
+  ############################################################################
+[2J[1;1H
+Port statistics ====================================
+  ######################## NIC statistics for port 1  ########################
+  RX-packets: 0          RX-missed: 0          RX-bytes:  0
+  RX-errors: 0
+  RX-nombuf:  0         
+  TX-packets: 1648149022 TX-errors: 0          TX-bytes:  105481537344
+
+  Throughput (since last show)
+  Rx-pps:            0          Rx-bps:            0
+  Tx-pps:     47102060          Tx-bps:  24116255016
+  ############################################################################
+Telling cores to stop...
+Waiting for lcores to finish...
+
+  ------- Forward Stats for RX Port= 1/Queue= 0 -> TX Port= 1/Queue= 0 -------
+  RX-packets: 0              TX-packets: 426665664      TX-dropped: 547270496     
+
+  ------- Forward Stats for RX Port= 1/Queue= 1 -> TX Port= 1/Queue= 1 -------
+  RX-packets: 0              TX-packets: 417119904      TX-dropped: 931168        
+
+  ------- Forward Stats for RX Port= 1/Queue= 2 -> TX Port= 1/Queue= 2 -------
+  RX-packets: 0              TX-packets: 417241152      TX-dropped: 1488640       
+
+  ------- Forward Stats for RX Port= 1/Queue= 3 -> TX Port= 1/Queue= 3 -------
+  RX-packets: 0              TX-packets: 434236928      TX-dropped: 607354432     
+
+  ---------------------- Forward statistics for port 1  ----------------------
+  RX-packets: 0              RX-dropped: 0             RX-total: 0
+  TX-packets: 1695262720     TX-dropped: 1157044736    TX-total: 2852307456
+  ----------------------------------------------------------------------------
+
+  +++++++++++++++ Accumulated forward statistics for all ports+++++++++++++++
+  RX-packets: 0              RX-dropped: 0             RX-total: 0
+  TX-packets: 1695262720     TX-dropped: 1157044736    TX-total: 2852307456
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Done.
+
+Primary: Sending 'stop_req' request to secondary...
+
+Stopping port 1...
+Stopping ports...
+Done
+
+Shutting down port 1...
+Closing ports...
+Port 0 is closed
+Port 1 is closed
+Done
+
+Bye...
